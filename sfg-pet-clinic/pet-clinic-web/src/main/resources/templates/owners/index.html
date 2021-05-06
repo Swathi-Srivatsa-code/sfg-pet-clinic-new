@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Pet Clinic Index</title>
+</head>
+<body>
+	
+<!-- /*thymesVar id="owner" type="guru.springframework.sfgpetclinic.models.Owner"*/ -->	
+	<h1 th:text="'List of Owners in our Application'">List of Owners</h1>
+	
+	<table border="1">
+	
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="owner : ${owners}">
+				<td th:text="${owner?.id}">1</td>
+				<td th:text="${owner?.firstName}">Joe</td>
+				<td th:text="${owner?.lastName}">Smith</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</body>
+</html>
